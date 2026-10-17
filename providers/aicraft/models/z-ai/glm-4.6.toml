@@ -2,7 +2,8 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "zhipuai/glm-4.6"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "toggle"
 
 [cost]
 input = 1.153
