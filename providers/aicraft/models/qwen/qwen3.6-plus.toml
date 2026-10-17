@@ -2,7 +2,11 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "alibaba/qwen3.6-plus"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "toggle"
+
+[[reasoning_options]]
+type = "budget_tokens"
 
 [cost]
 input = 0.3203
