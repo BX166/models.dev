@@ -1,0 +1,14 @@
+# Pricing from https://aicraftapi.net/pricing.html (accessed 2026-10-16), USD per million tokens.
+# Model id as published in the AICraft Model Catalog.
+base_model = "alibaba/qwen3.7-plus"
+
+reasoning_options = []
+
+[cost]
+input = 0.3203
+output = 1.2812
+
+[[cost.tiers]]
+tier = { type = "context", size = 256000 }
+input = 0.9609
+output = 3.8435
