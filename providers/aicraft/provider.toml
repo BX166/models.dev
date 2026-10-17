@@ -17,12 +17,12 @@ npm = "@ai-sdk/openai-compatible"
 # the AICraft price and, where the catalog tiers by context length, the higher
 # tiers. Everything else is inherited from the referenced base model.
 #
-# reasoning_options is the one exception: it is never inherited, so it is
-# declared per file. The published parameter list for POST /v1/chat/completions
-# (https://aicraftapi.net/docs.html) is model, messages, stream, temperature,
-# max_tokens, top_p, frequency_penalty, presence_penalty and stop. It documents
-# no effort, toggle or budget control, so the list is empty here rather than
-# copied from the base model.
+# reasoning_options states the reasoning controls the underlying model
+# supports. Request parameters are forwarded to the model unchanged: sending an
+# invalid reasoning_effort to POST /v1/chat/completions is rejected by the
+# model rather than ignored (verified 2026-10-17 with deepseek/deepseek-v4-pro,
+# claude-4.6-sonnet and openai/gpt-6-astra). Where a model exposes controls
+# they are listed per file; where it exposes none the list is empty.
 
 env = ["AICRAFT_API_KEY"]
 api = "https://aicraftapi.net/v1"
