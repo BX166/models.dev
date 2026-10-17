@@ -2,7 +2,9 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "xai/grok-4.1-fast-reasoning"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high"]
 
 [cost]
 input = 0.221
