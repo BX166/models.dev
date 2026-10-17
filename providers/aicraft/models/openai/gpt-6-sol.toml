@@ -2,7 +2,9 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "openai/gpt-6-sol"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "xhigh", "max"]
 
 [cost]
 input = 2.21

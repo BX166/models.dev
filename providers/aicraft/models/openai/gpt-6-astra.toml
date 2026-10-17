@@ -2,7 +2,9 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "openai/gpt-6-astra"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high", "xhigh", "max"]
 
 [cost]
 input = 11.05

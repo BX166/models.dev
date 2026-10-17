@@ -2,7 +2,9 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "openai/gpt-6-luna"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "effort"
+values = ["none", "low", "medium", "high", "xhigh", "max"]
 
 [cost]
 input = 0.1105
