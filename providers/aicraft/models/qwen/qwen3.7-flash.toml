@@ -1,8 +1,15 @@
 # Pricing from https://aicraftapi.net/pricing.html (accessed 2026-10-16), USD per million tokens.
 # Model id as published in the AICraft Model Catalog.
+# Toggle: enable_thinking true|false.
+# Budget: thinking_budget (integer reasoning tokens).
 base_model = "alibaba/qwen3.7-flash"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "toggle"
+
+[[reasoning_options]]
+type = "budget_tokens"
+max = 262_144
 
 [cost]
 input = 0.032
