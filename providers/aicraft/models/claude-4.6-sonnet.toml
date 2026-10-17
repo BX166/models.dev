@@ -7,8 +7,3 @@ reasoning_options = []
 [cost]
 input = 3.315
 output = 16.575
-
-[[cost.tiers]]
-tier = { type = "context", size = 200000 }
-input = 3.315
-output = 16.575
