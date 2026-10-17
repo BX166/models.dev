@@ -6,9 +6,11 @@ npm = "@ai-sdk/openai-compatible"
 # Create a key in the AICraft Console and see the quick start at
 # https://aicraftapi.net/docs.html
 #
-# Model ids are written as "<vendor>/<model>" in lowercase, for example
-# deepseek/deepseek-v4-pro. The catalog is published at
-# https://aicraftapi.net/models.html
+# Model ids are copied verbatim from GET https://aicraftapi.net/v1/models.
+# Some ids carry a vendor prefix (for example deepseek/deepseek-v4-pro) and
+# live in a subdirectory; others are bare ids (for example claude-4.5-sonnet)
+# and live directly under models/. The path minus .toml is the wire id in both
+# cases. The catalog is published at https://aicraftapi.net/models.html
 #
 # Pricing and context windows live at https://aicraftapi.net/pricing.html
 # (USD per million tokens, accessed 2026-10-16). Each file under models/ states
@@ -16,9 +18,11 @@ npm = "@ai-sdk/openai-compatible"
 # tiers. Everything else is inherited from the referenced base model.
 #
 # reasoning_options is the one exception: it is never inherited, so it is
-# declared per file. For models that reason, AICraft exposes no extra
-# effort/toggle control parameter, so the list is empty -- reasoning is
-# available, no control parameter is claimed.
+# declared per file. The published parameter list for POST /v1/chat/completions
+# (https://aicraftapi.net/docs.html) is model, messages, stream, temperature,
+# max_tokens, top_p, frequency_penalty, presence_penalty and stop. It documents
+# no effort, toggle or budget control, so the list is empty here rather than
+# copied from the base model.
 
 env = ["AICRAFT_API_KEY"]
 api = "https://aicraftapi.net/v1"
