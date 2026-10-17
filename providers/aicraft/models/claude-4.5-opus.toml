@@ -2,7 +2,13 @@
 # Model id as published in the AICraft Model Catalog.
 base_model = "anthropic/claude-opus-4-5"
 
-reasoning_options = []
+[[reasoning_options]]
+type = "effort"
+values = ["low", "medium", "high"]
+
+[[reasoning_options]]
+type = "budget_tokens"
+min = 1_024
 
 [cost]
 input = 5.525
