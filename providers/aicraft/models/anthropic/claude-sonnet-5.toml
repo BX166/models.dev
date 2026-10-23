@@ -2,15 +2,14 @@
 # Model id as published in the AICraft Model Catalog.
 # Toggle: thinking.type = adaptive|disabled.
 # Effort: reasoning_effort = low|medium|high|xhigh|max
+schema = 2
 base_model = "anthropic/claude-sonnet-5"
 
-[[reasoning_options]]
-type = "toggle"
+[capabilities]
+reasoning = { supported = true, toggle = true, effort = ["low", "medium", "high", "xhigh", "max"] }
 
-[[reasoning_options]]
-type = "effort"
-values = ["low", "medium", "high", "xhigh", "max"]
+[cost.text.input]
+price = 2.26
 
-[cost]
-input = 2.26
-output = 11.3
+[cost.text.output]
+price = 11.3

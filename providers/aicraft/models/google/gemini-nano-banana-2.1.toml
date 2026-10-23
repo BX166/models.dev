@@ -1,11 +1,13 @@
 # Pricing from https://aicraftapi.net/pricing.html (accessed 2026-10-16), USD per million tokens.
 # Model id as published in the AICraft Model Catalog.
+schema = 2
 base_model = "google/gemini-nano-banana-2.1"
 
-[[reasoning_options]]
-type = "effort"
-values = ["none", "minimal", "high"]
+[capabilities]
+reasoning = { supported = true, effort = ["none", "minimal", "high"] }
 
-[cost]
-input = 1.6575
-output = 33.15
+[cost.text.input]
+price = 1.6575
+
+[cost.text.output]
+price = 33.15

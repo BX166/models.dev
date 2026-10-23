@@ -1,16 +1,21 @@
 # Pricing from https://aicraftapi.net/pricing.html (accessed 2026-10-16), USD per million tokens.
 # Model id as published in the AICraft Model Catalog.
+schema = 2
 base_model = "openai/gpt-6-astra"
 
-[[reasoning_options]]
-type = "effort"
-values = ["low", "medium", "high", "xhigh", "max"]
+[capabilities]
+reasoning = { supported = true, effort = ["low", "medium", "high", "xhigh", "max"] }
 
-[cost]
-input = 11.05
-output = 55.25
+[cost.text.input]
+price = 11.05
 
-[[cost.tiers]]
-tier = { type = "context", size = 272000 }
-input = 22.1
-output = 82.875
+[[cost.text.input.overrides]]
+when = { context = { gt = 272_000 } }
+price = 22.1
+
+[cost.text.output]
+price = 55.25
+
+[[cost.text.output.overrides]]
+when = { context = { gt = 272_000 } }
+price = 82.875

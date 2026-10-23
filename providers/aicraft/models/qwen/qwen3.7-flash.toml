@@ -2,25 +2,30 @@
 # Model id as published in the AICraft Model Catalog.
 # Toggle: enable_thinking true|false.
 # Budget: thinking_budget (integer reasoning tokens).
+schema = 2
 base_model = "alibaba/qwen3.7-flash"
 
-[[reasoning_options]]
-type = "toggle"
+[capabilities]
+reasoning = { supported = true, toggle = true, budget = {} }
 
-[[reasoning_options]]
-type = "budget_tokens"
-max = 262_144
+[cost.text.input]
+price = 0.032
 
-[cost]
-input = 0.032
-output = 0.1281
+[[cost.text.input.overrides]]
+when = { context = { gt = 32_000 } }
+price = 0.0961
 
-[[cost.tiers]]
-tier = { type = "context", size = 32000 }
-input = 0.0961
-output = 0.3844
+[[cost.text.input.overrides]]
+when = { context = { gt = 256_000 } }
+price = 0.1922
 
-[[cost.tiers]]
-tier = { type = "context", size = 256000 }
-input = 0.1922
-output = 0.7687
+[cost.text.output]
+price = 0.1281
+
+[[cost.text.output.overrides]]
+when = { context = { gt = 32_000 } }
+price = 0.3844
+
+[[cost.text.output.overrides]]
+when = { context = { gt = 256_000 } }
+price = 0.7687

@@ -1,5 +1,6 @@
 name = "AICraft"
 npm = "@ai-sdk/openai-compatible"
+opencodeai = "@opencode/ai/providers/openai-compatible"
 
 # AICraft is an OpenAI-compatible gateway. Requests go to
 # POST https://aicraftapi.net/v1/chat/completions with a bearer token.
@@ -17,12 +18,13 @@ npm = "@ai-sdk/openai-compatible"
 # the AICraft price and, where the catalog tiers by context length, the higher
 # tiers. Everything else is inherited from the referenced base model.
 #
-# reasoning_options states the reasoning controls the underlying model
-# supports. Request parameters are forwarded to the model unchanged: sending an
+# [capabilities] reasoning states the controls the underlying model exposes on
+# this host. Request parameters are forwarded to the model unchanged: sending an
 # invalid reasoning_effort to POST /v1/chat/completions is rejected by the
 # model rather than ignored (verified 2026-10-17 with deepseek/deepseek-v4-pro,
-# claude-4.6-sonnet and openai/gpt-6-astra). Where a model exposes controls
-# they are listed per file; where it exposes none the list is empty.
+# claude-4.6-sonnet and openai/gpt-6-astra). A model with a caller-visible
+# control lists it per file; a reasoner with none is `supported = true` on its
+# own (always on), and a non-reasoner is `supported = false`.
 
 env = ["AICRAFT_API_KEY"]
 api = "https://aicraftapi.net/v1"

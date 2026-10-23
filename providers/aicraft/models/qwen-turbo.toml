@@ -2,14 +2,14 @@
 # Model id as published in the AICraft Model Catalog.
 # Toggle: enable_thinking true|false.
 # Budget: thinking_budget (integer reasoning tokens).
+schema = 2
 base_model = "alibaba/qwen-turbo"
 
-[[reasoning_options]]
-type = "toggle"
+[capabilities]
+reasoning = { supported = true, toggle = true, budget = {} }
 
-[[reasoning_options]]
-type = "budget_tokens"
+[cost.text.input]
+price = 0.048
 
-[cost]
-input = 0.048
-output = 0.4804
+[cost.text.output]
+price = 0.4804

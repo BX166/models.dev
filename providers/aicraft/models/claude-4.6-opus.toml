@@ -1,15 +1,13 @@
 # Pricing from https://aicraftapi.net/pricing.html (accessed 2026-10-16), USD per million tokens.
 # Model id as published in the AICraft Model Catalog.
+schema = 2
 base_model = "anthropic/claude-opus-4-6"
 
-[[reasoning_options]]
-type = "effort"
-values = ["low", "medium", "high", "max"]
+[capabilities]
+reasoning = { supported = true, effort = ["low", "medium", "high", "max"], budget = { min = 1_024 } }
 
-[[reasoning_options]]
-type = "budget_tokens"
-min = 1_024
+[cost.text.input]
+price = 5.525
 
-[cost]
-input = 5.525
-output = 27.625
+[cost.text.output]
+price = 27.625
