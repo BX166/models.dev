@@ -11,3 +11,6 @@ price = 0.2762
 
 [cost.text.output]
 price = 33.15
+
+[cost.image.output]
+price = 33.15

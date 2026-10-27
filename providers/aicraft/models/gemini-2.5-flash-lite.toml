@@ -6,7 +6,7 @@ schema = 2
 base_model = "google/gemini-2.5-flash-lite"
 
 [capabilities]
-reasoning = { supported = true, toggle = true, budget = { min = 512 } }
+reasoning = { supported = true, toggle = true, budget = { min = 512, max = 24_576 } }
 
 [cost.text.input]
 price = 0.1105
