@@ -4,7 +4,7 @@ schema = 2
 base_model = "bytedance-seed/seed-2.0-pro"
 
 [capabilities]
-reasoning = { supported = true, effort = ["low", "medium", "high"] }
+reasoning = { supported = true, effort = ["none", "low", "medium", "high"] }
 
 [cost.text.input]
 price = 0.5125
